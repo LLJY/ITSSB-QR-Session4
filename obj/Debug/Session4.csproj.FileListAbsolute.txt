@@ -1,0 +1,17 @@
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.csprojAssemblyReference.cache
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.AssignTraining.resources
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.LoginPage.resources
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.MainMenu.resources
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.Properties.Resources.resources
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.TrackCompetitor.resources
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.csproj.GenerateResource.cache
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\Session4.exe.config
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\Session4.exe
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\Session4.pdb
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\EntityFramework.dll
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\EntityFramework.xml
+C:\Users\user2\source\repos\Session4\Session4\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.csproj.CopyComplete
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.exe
+C:\Users\user2\source\repos\Session4\Session4\obj\Debug\Session4.pdb

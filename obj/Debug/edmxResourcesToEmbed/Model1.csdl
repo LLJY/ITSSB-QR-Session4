@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Session4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Assign_Training">
+    <Key>
+      <PropertyRef Name="trainingId" />
+    </Key>
+    <Property Name="trainingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="moduleIdFK" Type="Int32" Nullable="false" />
+    <Property Name="userIdFK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="progress" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Training_Module" Relationship="Self.FK_Assign_Training_Training_Module" FromRole="Assign_Training" ToRole="Training_Module" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Assign_Training_User1" FromRole="Assign_Training" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="skillId" />
+    </Key>
+    <Property Name="skillId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="skillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Training_Module" Relationship="Self.FK_Training_Module_Skill" FromRole="Skill" ToRole="Training_Module" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_Skill" FromRole="Skill" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Training_Module">
+    <Key>
+      <PropertyRef Name="moduleId" />
+    </Key>
+    <Property Name="moduleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userTypeIdFK" Type="Int32" Nullable="false" />
+    <Property Name="skillIdFK" Type="Int32" Nullable="false" />
+    <Property Name="moduleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="durationDays" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Assign_Training" Relationship="Self.FK_Assign_Training_Training_Module" FromRole="Training_Module" ToRole="Assign_Training" />
+    <NavigationProperty Name="Skill" Relationship="Self.FK_Training_Module_Skill" FromRole="Training_Module" ToRole="Skill" />
+    <NavigationProperty Name="User_Type" Relationship="Self.FK_Training_Module_User_Type" FromRole="Training_Module" ToRole="User_Type" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="passwd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="skillIdFK" Type="Int32" Nullable="false" />
+    <Property Name="userTypeIdFK" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Assign_Training" Relationship="Self.FK_Assign_Training_User1" FromRole="User" ToRole="Assign_Training" />
+    <NavigationProperty Name="Skill" Relationship="Self.FK_User_Skill" FromRole="User" ToRole="Skill" />
+    <NavigationProperty Name="User_Type" Relationship="Self.FK_User_User_Type" FromRole="User" ToRole="User_Type" />
+  </EntityType>
+  <EntityType Name="User_Type">
+    <Key>
+      <PropertyRef Name="userTypeId" />
+    </Key>
+    <Property Name="userTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Training_Module" Relationship="Self.FK_Training_Module_User_Type" FromRole="User_Type" ToRole="Training_Module" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_User_User_Type" FromRole="User_Type" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Assign_Training_Training_Module">
+    <End Role="Training_Module" Type="Self.Training_Module" Multiplicity="1" />
+    <End Role="Assign_Training" Type="Self.Assign_Training" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Training_Module">
+        <PropertyRef Name="moduleId" />
+      </Principal>
+      <Dependent Role="Assign_Training">
+        <PropertyRef Name="moduleIdFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assign_Training_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Assign_Training" Type="Self.Assign_Training" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Assign_Training">
+        <PropertyRef Name="userIdFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Training_Module_Skill">
+    <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+    <End Role="Training_Module" Type="Self.Training_Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="skillId" />
+      </Principal>
+      <Dependent Role="Training_Module">
+        <PropertyRef Name="skillIdFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Skill">
+    <End Role="Skill" Type="Self.Skill" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="skillId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="skillIdFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Training_Module_User_Type">
+    <End Role="User_Type" Type="Self.User_Type" Multiplicity="1" />
+    <End Role="Training_Module" Type="Self.Training_Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type">
+        <PropertyRef Name="userTypeId" />
+      </Principal>
+      <Dependent Role="Training_Module">
+        <PropertyRef Name="userTypeIdFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User_Type">
+    <End Role="User_Type" Type="Self.User_Type" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Type">
+        <PropertyRef Name="userTypeId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="userTypeIdFK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Session4Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Assign_Training" EntityType="Self.Assign_Training" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Training_Module" EntityType="Self.Training_Module" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="User_Type" EntityType="Self.User_Type" />
+    <AssociationSet Name="FK_Assign_Training_Training_Module" Association="Self.FK_Assign_Training_Training_Module">
+      <End Role="Training_Module" EntitySet="Training_Module" />
+      <End Role="Assign_Training" EntitySet="Assign_Training" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assign_Training_User1" Association="Self.FK_Assign_Training_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Assign_Training" EntitySet="Assign_Training" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Training_Module_Skill" Association="Self.FK_Training_Module_Skill">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="Training_Module" EntitySet="Training_Module" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Skill" Association="Self.FK_User_Skill">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Training_Module_User_Type" Association="Self.FK_Training_Module_User_Type">
+      <End Role="User_Type" EntitySet="User_Type" />
+      <End Role="Training_Module" EntitySet="Training_Module" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User_Type" Association="Self.FK_User_User_Type">
+      <End Role="User_Type" EntitySet="User_Type" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(Session4Model.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(Session4Model.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>
