@@ -42,6 +42,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
             this.label2.Location = new System.Drawing.Point(242, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -51,35 +52,38 @@
             // 
             // assign_update
             // 
+            this.assign_update.BackColor = System.Drawing.Color.Yellow;
             this.assign_update.Location = new System.Drawing.Point(263, 80);
             this.assign_update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assign_update.Name = "assign_update";
             this.assign_update.Size = new System.Drawing.Size(242, 76);
             this.assign_update.TabIndex = 3;
             this.assign_update.Text = "Assign Training";
-            this.assign_update.UseVisualStyleBackColor = true;
+            this.assign_update.UseVisualStyleBackColor = false;
             this.assign_update.Click += new System.EventHandler(this.assign_update_Click);
             // 
             // progress_check
             // 
+            this.progress_check.BackColor = System.Drawing.Color.Yellow;
             this.progress_check.Location = new System.Drawing.Point(263, 160);
             this.progress_check.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progress_check.Name = "progress_check";
             this.progress_check.Size = new System.Drawing.Size(242, 76);
             this.progress_check.TabIndex = 4;
             this.progress_check.Text = "Track Overall Training Progress";
-            this.progress_check.UseVisualStyleBackColor = true;
+            this.progress_check.UseVisualStyleBackColor = false;
             this.progress_check.Click += new System.EventHandler(this.progress_check_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Yellow;
             this.button1.Location = new System.Drawing.Point(8, 9);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 30);
             this.button1.TabIndex = 5;
             this.button1.Text = "BACK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
