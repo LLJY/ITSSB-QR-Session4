@@ -39,12 +39,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.csv_open = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 82);
+            this.label1.Location = new System.Drawing.Point(238, 147);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
@@ -56,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(141, 7);
+            this.label2.Location = new System.Drawing.Point(236, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(318, 26);
@@ -66,7 +71,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(133, 119);
+            this.label3.Location = new System.Drawing.Point(228, 184);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
@@ -75,7 +80,7 @@
             // 
             // user_box
             // 
-            this.user_box.Location = new System.Drawing.Point(196, 82);
+            this.user_box.Location = new System.Drawing.Point(291, 147);
             this.user_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.user_box.Name = "user_box";
             this.user_box.Size = new System.Drawing.Size(203, 20);
@@ -83,7 +88,7 @@
             // 
             // password_box
             // 
-            this.password_box.Location = new System.Drawing.Point(196, 119);
+            this.password_box.Location = new System.Drawing.Point(291, 184);
             this.password_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.password_box.Name = "password_box";
             this.password_box.Size = new System.Drawing.Size(203, 20);
@@ -91,7 +96,7 @@
             // 
             // login_button
             // 
-            this.login_button.Location = new System.Drawing.Point(229, 169);
+            this.login_button.Location = new System.Drawing.Point(324, 234);
             this.login_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(125, 63);
@@ -104,7 +109,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(86, 235);
+            this.label4.Location = new System.Drawing.Point(181, 300);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(446, 26);
@@ -113,7 +118,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(196, 295);
+            this.textBox3.Location = new System.Drawing.Point(291, 360);
             this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(203, 20);
@@ -122,7 +127,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 295);
+            this.label5.Location = new System.Drawing.Point(228, 360);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
@@ -131,7 +136,7 @@
             // 
             // csv_open
             // 
-            this.csv_open.Location = new System.Drawing.Point(402, 295);
+            this.csv_open.Location = new System.Drawing.Point(497, 360);
             this.csv_open.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.csv_open.Name = "csv_open";
             this.csv_open.Size = new System.Drawing.Size(57, 19);
@@ -143,19 +148,54 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(276, 330);
+            this.label6.Font = new System.Drawing.Font("Verdana", 16.2F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(104, 12);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(78, 26);
             this.label6.TabIndex = 10;
             this.label6.Text = "label6";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Maroon;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Location = new System.Drawing.Point(0, 424);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(795, 48);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Location = new System.Drawing.Point(-1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(795, 68);
+            this.panel1.TabIndex = 17;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(287, 8);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(244, 52);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "ASEAN Skills \r\n2020 26-28 Jul 2020";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(793, 471);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.csv_open);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -169,6 +209,10 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoginPage";
             this.Text = "Login";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +231,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button csv_open;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -30,3 +30,6 @@ C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.csproj.Generate
 C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.csproj.CopyComplete
 C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.exe
 C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.pdb
+C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.TrackProgress.resources
+C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.UpdateTraining.resources
+C:\Users\lucas\source\repos\ITSSB-QR-Session4\obj\Debug\Session4.UpdateExpert.resources

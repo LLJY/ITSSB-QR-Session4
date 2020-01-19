@@ -18,7 +18,7 @@ namespace Session4
         {
             InitializeComponent();
             var dt = (DateTime.Parse("July 26 2020 9am") - DateTime.Now);
-        label6.Text = $"{Math.Floor(dt.TotalDays)} days {Math.Floor((dt - TimeSpan.FromDays(Math.Floor(dt.TotalDays))).TotalHours)} hours and {Math.Floor((dt - TimeSpan.FromHours(Math.Floor(dt.TotalHours))).TotalMinutes)} minutes to go.";
+        label6.Text = $"{Math.Floor(dt.TotalDays)} days {Math.Floor((dt - TimeSpan.FromDays(Math.Floor(dt.TotalDays))).TotalHours)} hours and {Math.Floor((dt - TimeSpan.FromHours(Math.Floor(dt.TotalHours))).TotalMinutes)} minutes until the event starts";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,7 +50,10 @@ namespace Session4
                             form1.Show();
                             break;
                         case 3:
-                            //fdfg
+                            this.Hide();
+                            var form2 = new UpdateTraining();
+                            form2.Closed += (s, args) => this.Close();
+                            form2.Show();
                             break;
                     }
                 }

@@ -89,7 +89,7 @@ namespace Session4
             using (var db = new Session4Entities())
             {
                 training_box.DataSource = null;
-                training_box.DataSource = await GetModule((from a in db.Skills where a.skillId == skill_combo.SelectedIndex + 1 select a.skillId).First(), trainee_combo.SelectedIndex + 1);
+                training_box.DataSource = await GetModule((from a in db.Skills where a.skillId == skill_combo.SelectedIndex + 1 select a.skillId).First(), trainee_combo.SelectedIndex + 2);
             }
         }
 
@@ -156,13 +156,16 @@ namespace Session4
                               where a.moduleName == currentmodule
                               select a.moduleId).First();
                     var skill = dgvlist[i].Skill;
+                    var persontype = dgvlist[i].TraineeCategory;
                     var currentskill = (from a in db.Skills where a.skillName == skill select a.skillId).First();
+                    var usertype = (from u in db.User_Type where u.userTypeName == persontype select u.userTypeId).First();
                     var people = (from b in db.Users
                                   where b.skillIdFK == currentskill
+                                  where b.userTypeIdFK == usertype
                                   select b.userId).ToList();
                     foreach (var item in people)
                     {
-
+                        MessageBox.Show(item);
                         try
                         {
 

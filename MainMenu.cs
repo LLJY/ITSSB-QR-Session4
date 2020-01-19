@@ -36,6 +36,10 @@ namespace Session4
             }
             else
             {
+                this.Hide();
+                var form = new UpdateExpert(LoggedIn);
+                form.Closed += (s, args) => this.Close();
+                form.Show();
             }
         }
 
@@ -45,6 +49,13 @@ namespace Session4
             {
                 this.Hide();
                 var form = new TrackCompetitor(LoggedIn);
+                form.Closed += (s, args) => this.Close();
+                form.Show();
+            }
+            else
+            {
+                this.Hide();
+                var form = new TrackProgress(LoggedIn);
                 form.Closed += (s, args) => this.Close();
                 form.Show();
             }
