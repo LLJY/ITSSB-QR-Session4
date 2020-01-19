@@ -59,6 +59,14 @@ namespace Session4
             }
             dataGridView1.DataSource = traininglist;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form1 = new MainMenu(LoggedInUser);
+            form1.Closed += (s, args) => this.Close();
+            form1.Show();
+        }
     }
     public class TrainingProgress
     {

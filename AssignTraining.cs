@@ -22,14 +22,14 @@ namespace Session4
         }
         public async void Initialize()
         {
-            var asynctask1 = getSkills();
+            var asynctask1 = GetSkills();
             InitializeComponent();
             skill_combo.DataSource = await asynctask1;
             trainee_combo.Items.Add("Expert");
             trainee_combo.Items.Add("Competitor");
             dgvlist = new List<AssignTrng>();
         }
-        public async Task<List<string>> getSkills()
+        public async Task<List<string>> GetSkills()
         {
             using (var db = new Session4Entities())
             {
@@ -38,7 +38,7 @@ namespace Session4
                         select s.skillName).ToList();
             }
         }
-        public async Task<List<string>> getModule(int skillid, int usertype)
+        public async Task<List<string>> GetModule(int skillid, int usertype)
         {
             var returnlist = new List<string>();
             trainingds = new List<string>();
@@ -62,8 +62,19 @@ namespace Session4
         {
             using (var db = new Session4Entities())
             {
-                training_box.DataSource = null;
-                training_box.DataSource = await getModule((from a in db.Skills where a.skillId == skill_combo.SelectedIndex + 1 select a.skillId).First(), trainee_combo.SelectedIndex + 1);
+                try
+                {
+                    training_box.DataSource = null;
+                    var selectedskill = skill_combo.SelectedItem.ToString();
+                    var selectedusertype = trainee_combo.SelectedItem.ToString();
+                    var skillid = (from a in db.Skills where a.skillName == selectedskill select a.skillId).First();
+                    var usertypeid = (from u in db.User_Type where u.userTypeName == selectedusertype select u.userTypeId).First();
+                    training_box.DataSource = await GetModule(skillid, usertypeid);
+                }
+                catch
+                {
+                    
+                }
             }
             
         }
@@ -78,7 +89,7 @@ namespace Session4
             using (var db = new Session4Entities())
             {
                 training_box.DataSource = null;
-                training_box.DataSource = await getModule((from a in db.Skills where a.skillId == skill_combo.SelectedIndex + 1 select a.skillId).First(), trainee_combo.SelectedIndex + 1);
+                training_box.DataSource = await GetModule((from a in db.Skills where a.skillId == skill_combo.SelectedIndex + 1 select a.skillId).First(), trainee_combo.SelectedIndex + 1);
             }
         }
 

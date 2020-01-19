@@ -43,6 +43,7 @@ namespace Session4
         {
             if (LoggedIn.userTypeIdFK == 2)
             {
+                this.Hide();
                 var form = new TrackCompetitor(LoggedIn);
                 form.Closed += (s, args) => this.Close();
                 form.Show();
