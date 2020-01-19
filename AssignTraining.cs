@@ -165,7 +165,6 @@ namespace Session4
                                   select b.userId).ToList();
                     foreach (var item in people)
                     {
-                        MessageBox.Show(item);
                         try
                         {
 

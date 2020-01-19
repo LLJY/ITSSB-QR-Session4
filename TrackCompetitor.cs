@@ -67,6 +67,26 @@ namespace Session4
             form1.Closed += (s, args) => this.Close();
             form1.Show();
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                if(int.Parse(item.Cells[1].Value.ToString()) == 0)
+                {
+                    item.Cells[1].Style.BackColor = Color.Red;
+                }
+                if (int.Parse(item.Cells[2].Value.ToString()) == 0)
+                {
+                    item.Cells[2].Style.BackColor = Color.Red;
+                }
+                if (int.Parse(item.Cells[3].Value.ToString()) == 0)
+                {
+                    item.Cells[3].Style.BackColor = Color.Red;
+                }
+            }
+
+        }
     }
     public class TrainingProgress
     {
