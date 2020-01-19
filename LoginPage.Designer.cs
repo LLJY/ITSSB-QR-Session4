@@ -82,7 +82,7 @@
             // user_box
             // 
             this.user_box.Location = new System.Drawing.Point(291, 147);
-            this.user_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.user_box.Margin = new System.Windows.Forms.Padding(2);
             this.user_box.Name = "user_box";
             this.user_box.Size = new System.Drawing.Size(203, 20);
             this.user_box.TabIndex = 3;
@@ -90,7 +90,7 @@
             // password_box
             // 
             this.password_box.Location = new System.Drawing.Point(291, 184);
-            this.password_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.password_box.Margin = new System.Windows.Forms.Padding(2);
             this.password_box.Name = "password_box";
             this.password_box.Size = new System.Drawing.Size(203, 20);
             this.password_box.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.login_button.BackColor = System.Drawing.Color.Yellow;
             this.login_button.Location = new System.Drawing.Point(324, 234);
-            this.login_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.login_button.Margin = new System.Windows.Forms.Padding(2);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(125, 63);
             this.login_button.TabIndex = 5;
@@ -122,7 +122,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(291, 360);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(203, 20);
             this.textBox3.TabIndex = 8;
@@ -140,7 +140,7 @@
             // csv_open
             // 
             this.csv_open.Location = new System.Drawing.Point(497, 360);
-            this.csv_open.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.csv_open.Margin = new System.Windows.Forms.Padding(2);
             this.csv_open.Name = "csv_open";
             this.csv_open.Size = new System.Drawing.Size(57, 19);
             this.csv_open.TabIndex = 9;
@@ -178,6 +178,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(795, 68);
             this.panel1.TabIndex = 17;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // label7
             // 
@@ -209,7 +210,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LoginPage";
             this.Text = "Login";
             this.panel2.ResumeLayout(false);

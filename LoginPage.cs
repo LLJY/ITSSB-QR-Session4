@@ -102,5 +102,10 @@ namespace Session4
                 MessageBox.Show("No file was selected, Aborting!");
             }
         }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
