@@ -182,13 +182,13 @@ namespace Session4
             {
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 100;
             }
-            if (int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()) > dgvlist[e.RowIndex].Progress)
+            if (int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString()) >= dgvlist[e.RowIndex].Progress)
             {
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dgvlist[e.RowIndex].Progress;
+                dgvlist[e.RowIndex].Progress = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
             }
             else
             {
-                dgvlist[e.RowIndex].Progress = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = dgvlist[e.RowIndex].Progress;
             }
         }
     }
